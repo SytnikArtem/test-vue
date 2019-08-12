@@ -1,0 +1,41 @@
+.app {
+  display: flex;
+  height: 100vh;
+  &.page-home {
+    .menu {
+      width: 50%;
+    }
+    .social {
+      width: 50%;
+    }
+    .menu-show {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  &.closemenu {
+    .menu {
+      transform: translateX(-100%);
+    }
+    .main {
+      margin-left: 0;
+    }
+  }
+  &.closesocial {
+    .main {
+      margin-right: 0;
+    }
+    .social {
+      transform: translateX(100%);
+    }
+  }
+}
+.main {
+  width: 100%;
+  transition: all .5s ease;
+  margin-left: 20%;
+  margin-right: 10%;
+  & > div {
+    height: 100vh;
+  }
+}

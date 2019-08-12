@@ -1,0 +1,37 @@
+.social {
+  width: 10%;
+  flex-shrink: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: width .5s ease, transform .5s ease;
+  &-list {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  &-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-link {
+    padding: 0 35%;
+    height: 100%;
+    width: 100%;
+    background: rgba(146, 146, 146, 0.7);
+    transition: background-color .5s ease;
+    &:hover {
+      background: rgba(192, 192, 192, 0.51);
+      .icon-fill {
+        fill: rgba(146, 146, 146, 0.9);
+      }
+    }
+  }
+  .icon-fill {
+    fill: #ffffff;
+    transition: fill .5s ease;
+  }
+}
