@@ -9,14 +9,19 @@ export default new Vuex.Store({
     openSocial: true
   },
   mutations: {
-    hideMenu(state) {
-      state.openMenu = !state.openMenu
+    hideMenu(state, payload) {
+      state.openMenu = payload
     },
-    hideSocial(state) {
-      state.openSocial = !state.openSocial
+    hideSocial(state, payload) {
+      state.openSocial = payload
     }
   },
   actions: {
-
+    hideMenu(context, type) {
+      context.commit('hideMenu', type)
+    },
+    hideSocial(context, type) {
+      context.commit('hideSocial', type)
+    }
   }
 })

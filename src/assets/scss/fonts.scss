@@ -1,0 +1,22 @@
+@mixin fontFace($FontName, $FontPathName ) {
+
+  @font-face {
+    font-family: '#{$FontName}';
+    src: url('/assets/fonts/#{$FontPathName}.woff2') format('woff2'),
+    url('/assets/fonts/#{$FontPathName}.woff') format('woff'),
+    url('/assets/fonts/#{$FontPathName}.ttf') format('truetype');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+}
+
+@include fontFace('Graphik-Regular', 'Graphik-Regular');
+@include fontFace('Graphik-Medium', 'Graphik-Medium');
+@include fontFace('Graphik-Bold', 'Graphik-Bold');
+@include fontFace('Graphik-SemiBold', 'Graphik-SemiBold');
+$font-main: 'Graphik-Regular', Arial, Helvetica, sans-serif;
+$font-medium: 'Graphik-Medium', Arial, Helvetica, sans-serif;
+$font-bold: 'Graphik-Bold', Arial, Helvetica, sans-serif;
+$font-semibold: 'Graphik-SemiBold', Arial, Helvetica, sans-serif;

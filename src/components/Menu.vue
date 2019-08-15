@@ -1,10 +1,14 @@
 <template>
     <div class="menu">
         <nav class="menu-nav">
-            <router-link class="menu-link" active-class="active" exact to="/">Home</router-link>
-            <router-link class="menu-link" active-class="active" exact to="/about">About</router-link>
-            <router-link class="menu-link" active-class="active" exact to="/portfolio">Portfolio</router-link>
-            <router-link class="menu-link" active-class="active" exact to="/contacts">Contacts</router-link>
+            <router-link
+                v-for="link in links"
+                :key="link.url"
+                :to="link.url"
+                :exact="link.exact"
+                class="menu-link"
+                active-class="active"
+            >{{link.title}}</router-link>
         </nav>
         <a href="" @click.prevent="hideMenu" class="menu-show"></a>
     </div>
@@ -14,9 +18,19 @@
 <script>
     export default {
         name: "Menu",
+        data() {
+            return {
+                links: [
+                    {title: 'Home', url: '/', exact: true},
+                    {title: 'About', url: '/about'},
+                    {title: 'Portfolio', url: '/portfolio'},
+                    {title: 'Contacts', url: '/contact'}
+                ]
+            }
+        },
         methods: {
             hideMenu() {
-                this.$store.commit('hideMenu');
+                return this.$store.dispatch('hideMenu', !this.$store.state.openMenu);
             }
         }
     }

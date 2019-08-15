@@ -6,6 +6,7 @@
   top: 0;
   bottom: 0;
   transition: width .5s ease, transform .5s ease;
+  z-index: 1;
   &-list {
     height: 100vh;
     display: flex;
@@ -23,6 +24,7 @@
     width: 100%;
     background: rgba(146, 146, 146, 0.7);
     transition: background-color .5s ease;
+    text-align: center;
     &:hover {
       background: rgba(192, 192, 192, 0.51);
       .icon-fill {

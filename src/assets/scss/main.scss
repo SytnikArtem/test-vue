@@ -1,6 +1,7 @@
 .app {
   display: flex;
   height: 100vh;
+  overflow: hidden;
   &.page-home {
     .menu {
       width: 50%;
@@ -18,12 +19,12 @@
       transform: translateX(-100%);
     }
     .main {
-      margin-left: 0;
+      margin-left: 50px;
     }
   }
   &.closesocial {
     .main {
-      margin-right: 0;
+      margin-right: 50px;
     }
     .social {
       transform: translateX(100%);
@@ -33,9 +34,17 @@
 .main {
   width: 100%;
   transition: all .5s ease;
-  margin-left: 20%;
-  margin-right: 10%;
-  & > div {
-    height: 100vh;
+  background: aqua;
+  margin: 50px calc(10% + 50px) 50px calc(20% + 50px);
+  //& > div {
+  //  height: calc(100vh - 100px);
+  //  margin: 50px;
+  //  overflow: auto;
+  //}
+  .scroll-area {
+    height: calc(100vh - 100px);
+  }
+  &-container {
+    height: 100%;
   }
 }

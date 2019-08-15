@@ -56,7 +56,7 @@
         name: "Social",
         methods: {
             hideSocial() {
-                this.$store.commit('hideSocial');
+                return this.$store.dispatch('hideSocial', !this.$store.state.openSocial);
             }
         },
     }

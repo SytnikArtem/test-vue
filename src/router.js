@@ -14,6 +14,9 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
+      props: {
+        color: 'red'
+      },
       component: () => import('./views/About.vue')
     },
     {
