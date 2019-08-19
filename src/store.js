@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     openMenu: true,
-    openSocial: true
+    openSocial: true,
+    bgColor: ['transparent', 'red', 'blue', 'yellow'],
+    currentColor: 'red'
   },
   mutations: {
     hideMenu(state, payload) {

@@ -1,3 +1,62 @@
 .about {
-
+  &-content {
+    display: flex;
+  }
+  &-left {
+    width: var(--photoWidth);
+    flex-shrink: 0;
+    position: fixed;
+    left: calc(var(--menuWidth + var(--margin) + var(--padding)));
+    &-btn {
+      width: 100%;
+      display: block;
+      padding: 15px 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: rgba(59, 32, 51, 0.9);
+      transition: background-color .3s ease;
+      color: #ffffff;
+      font-size: 14px;
+      margin-top: 20px;
+      &:hover {
+        background-color: #3B2033;
+      }
+    }
+  }
+  &-right {
+    width: 100%;
+    padding-left: calc(var(--photoWidth) + var(--margin));
+    &-title {
+      font-size: 32px;
+      margin: 20px 0;
+      text-align: center;
+      + .about-right-row {
+        border-top: 0
+      }
+    }
+    &-row {
+      display: flex;
+      padding: 10px 2px;
+      border-top: 1px solid #f0d6d6;
+      font-size: 16px;
+      line-height: 1.3;
+      transition: background-color .3s ease;
+      &:hover {
+        background: #f0d6d6;
+      }
+    }
+    &-key {
+      width: 30%;
+      flex-shrink: 0;
+      padding-right: 20px;
+      font-weight: bold;
+    }
+    &-text {
+      a {
+        text-decoration: none;
+        color: #5473db
+      }
+    }
+  }
 }

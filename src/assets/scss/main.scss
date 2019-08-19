@@ -1,3 +1,11 @@
+:root {
+  --margin: 50px;
+  --padding: 20px;
+  --menuWidth: 20%;
+  --socialWidth: 10%;
+  --photoWidth: 300px
+}
+
 .app {
   display: flex;
   height: 100vh;
@@ -34,15 +42,12 @@
 .main {
   width: 100%;
   transition: all .5s ease;
-  background: aqua;
-  margin: 50px calc(10% + 50px) 50px calc(20% + 50px);
-  //& > div {
-  //  height: calc(100vh - 100px);
-  //  margin: 50px;
-  //  overflow: auto;
-  //}
+  background: #f2f2f2;
+  margin: var(--margin) calc(10% + var(--margin)) var(--margin) calc(20% + var(--margin));
   .scroll-area {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 2 * var(--margin) - 2 * var(--padding));
+    padding: 0 var(--padding);
+    margin: var(--padding) 0;
   }
   &-container {
     height: 100%;

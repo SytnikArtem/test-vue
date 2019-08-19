@@ -1,3 +1,19 @@
 .portfolio {
-
+  &-list {
+    columns: 4;
+    font-size: 0;
+  }
+  &-item {
+    font-size: 0;
+    opacity: 0.7;
+    transition: all .3s ease;
+    display: block;
+    outline: 2px solid transparent;
+    &:hover {
+      opacity: 1;
+    }
+    &-img {
+      width: 100%;
+    }
+  }
 }
