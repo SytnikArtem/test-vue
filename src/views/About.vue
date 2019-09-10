@@ -3,7 +3,7 @@
     <div class="about-content">
       <div class="about-left">
         <img src="../assets/img/myphoto.png" alt="" class="about-left-img">
-        <a href="../assets/img/cv_sytnik_artem.pdf" class="about-left-btn" target="_blank">Посмотреть резюме</a>
+        <a href="/cv_sytnik_artem.pdf" class="about-left-btn" target="_blank">Посмотреть резюме</a>
       </div>
       <div class="about-right">
         <h2 class="about-right-title">Обо мне</h2>

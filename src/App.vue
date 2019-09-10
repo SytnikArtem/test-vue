@@ -4,7 +4,7 @@
                 {closemenu: !this.$store.state.openMenu},
                 {closesocial: !this.$store.state.openSocial}]"
   >
-    <div :class="[ 'g-cursor', { 'g-cursor_hover': hover }, {'g-cursor_hide': hideCursor} ]">
+    <div v-if="!mobileFlag" :class="[ 'g-cursor', { 'g-cursor_hover': hover }, {'g-cursor_hide': hideCursor} ]">
       <div :style="`transform: translateX(${xParent}px) translateY(${yParent}px) translateZ(0) translate3d(0, 0, 0);`"
            class="g-cursor__circle"
       ></div>
@@ -16,6 +16,7 @@
     </div>
     <Menu/>
     <main class="main">
+
       <vue-custom-scrollbar class="scroll-area">
         <transition name="fade" mode="out-in">
           <router-view/>
@@ -39,32 +40,35 @@
         hover: false,
         hideCursor: true,
         cursorX: 0,
-        cursorY: 0
+        cursorY: 0,
+        mobileFlag: /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)
       }
     },
     components: {
       Menu, Social, vueCustomScrollbar
     },
     mounted() {
-      const moveCursor = e => {
-        this.hideCursor = false;
-        this.xChild = e.clientX ? e.clientX : e.touches[0].clientX;
-        this.yChild = e.clientY ? e.clientY : e.touches[0].clientY;
-        setTimeout(() => {
-          this.xParent =
-                  e.clientX - 15 ? e.clientX - 15 : e.touches[0].clientX - 15;
-          this.yParent =
-                  e.clientY - 15 ? e.clientY - 15 : e.touches[0].clientY - 15;
-        }, 0);
-      };
-      window.addEventListener("mousemove", moveCursor);
-      window.addEventListener("touchmove", moveCursor);
-      window.addEventListener("touchstart", () => {
-        this.hideCursor = false;
-      });
-      window.addEventListener("touchend", () => {
-        this.hideCursor = true;
-      });
+      if (!this.mobileFlag) {
+        const moveCursor = e => {
+          this.hideCursor = false;
+          this.xChild = e.clientX ? e.clientX : e.touches[0].clientX;
+          this.yChild = e.clientY ? e.clientY : e.touches[0].clientY;
+          setTimeout(() => {
+            this.xParent =
+                    e.clientX - 15 ? e.clientX - 15 : e.touches[0].clientX - 15;
+            this.yParent =
+                    e.clientY - 15 ? e.clientY - 15 : e.touches[0].clientY - 15;
+          }, 0);
+        };
+        window.addEventListener("mousemove", moveCursor);
+        window.addEventListener("touchmove", moveCursor);
+        window.addEventListener("touchstart", () => {
+          this.hideCursor = false;
+        });
+        window.addEventListener("touchend", () => {
+          this.hideCursor = true;
+        });
+      }
     }
   }
 </script>
