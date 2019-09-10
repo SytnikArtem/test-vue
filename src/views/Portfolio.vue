@@ -5,6 +5,7 @@
                 v-for="image in list"
                 :href="image.href"
                 class="portfolio-item"
+                target="_blank"
                 :key="image.name">
                 <img
                     :src="require(`@/assets/img/${image.name}.jpg`)"
@@ -30,8 +31,10 @@
                     {name: "phototo", href: "https://photo-to.ru/"},
                     {name: "evromisto", href: "https://evromisto.ua/"},
                     {name: "veselka", href: "https://veselka-kids.com/"},
-                    // {name: "ostrov", href: "https://sytnikartem.github.io/pages/ostrov/"},
-                    {name: "main-fitness", href: "https://cityfit.ru/"}
+                    {name: "ostrov", href: "https://sytnikartem.github.io/pages/ostrov/"},
+                    {name: "main-fitness", href: "https://cityfit.ru/"},
+                    {name: "mogo", href: "https://sytnikartem.github.io/pages/mogo/"},
+                    {name: "callcenter", href: "https://sytnikartem.github.io/pages/callcenter/"}
                 ]
             }
         },

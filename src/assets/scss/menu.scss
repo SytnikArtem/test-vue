@@ -40,13 +40,18 @@
     transition: background-color .5s ease;
     opacity: 1;
     pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:hover {
       background: rgba(255, 255, 255, 0.3);
+      .arrow {
+        opacity: 0.5;
+      }
     }
     &_social {
       left: 0;
       transform: translateX(-100%);
     }
   }
-
 }

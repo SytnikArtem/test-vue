@@ -55,7 +55,7 @@
                   e.clientX - 15 ? e.clientX - 15 : e.touches[0].clientX - 15;
           this.yParent =
                   e.clientY - 15 ? e.clientY - 15 : e.touches[0].clientY - 15;
-        }, 100);
+        }, 0);
       };
       window.addEventListener("mousemove", moveCursor);
       window.addEventListener("touchmove", moveCursor);
@@ -142,4 +142,5 @@
 @import 'assets/scss/menu';
 @import 'assets/scss/social';
 @import 'assets/scss/pages';
+@import 'assets/scss/media';
 </style>

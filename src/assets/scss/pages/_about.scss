@@ -7,6 +7,9 @@
     flex-shrink: 0;
     position: fixed;
     left: calc(var(--menuWidth + var(--margin) + var(--padding)));
+    &-img {
+      width: 100%;
+    }
     &-btn {
       width: 100%;
       display: block;
